@@ -40,7 +40,7 @@
     * `git log` 查看版本控制的歷史紀錄
     可從此依指令查看此版本的名稱，也就是首行很像亂碼的部分
     `git log --oneline` 可顯示較簡短的內容
-    * `git checkout <version name>` 回到特定的版本狀態，特別注意的是回到目前 branch（分支）上的版本，而不是整個專案
+    * `git checkout <version name>` 回到特定的版本狀態，特別注意的是回到目前 branch（分支）上的版本而不是整個專案
     使用 `git checkout <branch name>` 返回到最新的版本的狀態
     
 * #### Git Branch 分支

@@ -1,4 +1,3 @@
-# week1 hw1
 ## 交作業流程
 1. 開通 GitHub Classroom 的 repository
 2. 把作業倉庫 clone 下來自己的電腦
