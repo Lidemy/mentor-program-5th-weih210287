@@ -1,5 +1,5 @@
+# week1 hw1
 ## 交作業流程
-
 1. 開通 GitHub Classroom 的 repository
 2. 把作業倉庫 clone 下來自己的電腦
     ---> ```git clone``` 
@@ -9,11 +9,13 @@
 4. 切換至此 branch
     ---> ```git checkout week1```
     ---> ```git checkout -b week1``` 同時新開並切換至 w1
-5. commit
+5. add & commit
+    ---> `add .` 
+    對檔案做完任何變更記得都要先 add 在 commit
     ---> ```git commit -am "hw1 finished"``` 記得先 add 再 commit
 6. push 至 GitHub
     ---> ```git push origin week1``` 把新增的 branch (week1) 給 push 上去
-7. 點選綠色按鈕發 pull request，把新增的 branch 給 merge 進 master
+7. 點選綠色按鈕發 pull request （PR），把新增的 branch 給 merge 進 master
     ---> 留言板可留下問題，底下可查看所做的修改和新增
     ---> create pull request
 8. 檢查 file changed 看有沒有需要修改
