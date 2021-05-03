@@ -15,7 +15,7 @@ rl.on('close', () => {
 
 function solve(lines) {
   const tmp = lines[0].split(' ')
-  for (let i = Number(tmp[0]); i < Number(tmp[1]); i++) {
+  for (let i = Number(tmp[0]); i <= Number(tmp[1]); i++) {
     if (isNarcissistic(i)) {
       console.log(i)
     }
