@@ -77,7 +77,7 @@ function createBook(str) {
   request.post({
     url: `${API_ENDPOINT}books/`,
     form: {
-      str
+      name: str
     }
   },
   (err, reponse, body) => {
@@ -92,7 +92,7 @@ function updateBook(id, str) {
   request.patch({
     url: `${API_ENDPOINT}books/${id}`,
     form: {
-      str
+      name: str
     }
   },
   (err, reponse, body) => {
