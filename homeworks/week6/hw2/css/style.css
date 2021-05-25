@@ -1,0 +1,104 @@
+h1, h3 {
+  margin: 0;
+}
+
+:lang(en) {
+  font-family: "Arial";
+}
+
+body {
+  background: #F0F0F0;
+}
+
+form {
+  margin: 0 auto;
+  margin-top: 130px;
+  width: 645px;
+  padding: 50px 40px 35px;
+  background: #ffffff;
+  border-top: solid 6px #fad312;
+  box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.form__top h1 {
+  font-size: 36px;
+  letter-spacing: -1.8px;
+}
+
+.form__top-info {
+  margin: 35px 0 20px;
+  font-size: 14px;
+  line-height: 2em;
+}
+
+.form__top-must {
+  font-size: 16px;
+  color: #e74149;
+}
+
+.question__title {
+  display: flex;
+  margin: 50px 0 20px;
+  font-size: 20px;
+}
+
+.question__title p {
+  margin: 0;
+  padding-left: 5px;
+  color: #e74149;
+}
+
+.question__title.suggestion {
+  display: block;
+}
+
+input[type="text"] {
+  padding: 5px 0 0px;
+  border: solid 1px #d0d0d0;
+}
+
+input::placeholder {
+  font-size: 16px;
+  color: #afafaf;
+}
+
+.first-option {
+  margin-bottom: 20px;
+}
+
+label {
+  padding-left: 8px;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  padding: 13px 30px;
+  background: #fad312;
+  font-size: 15px;
+  border-width: 0;
+  border-radius: 3px;
+}
+
+.advice {
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.submit {
+  margin-top: 55px;
+}
+
+.warning {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+footer {
+  margin-top: 60px;
+  display: block;
+  padding: 20px 16px;
+  font-size: 13px;
+  color: #999999;
+  background: black;
+  text-align: center;
+}

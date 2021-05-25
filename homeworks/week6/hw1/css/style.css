@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap")
+
+h3, p {
+  margin: 0;
+}
+
+.navbar {
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+}
+
+.navbar .wrapper {
+  background: white;
+  padding: 0 20px;
+  height: 84px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.wrapper {
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.navbar__site-name {
+  font-family: "Questrial";
+  text-align: right;
+  font-size: 36px;
+  transition: filter 0.1s;
+}
+
+.navbar__site-name:hover {
+  filter: brightness(1.2);
+}
+
+.navbar__site-name a {
+  text-decoration: none;
+  color: #489846;
+}
+
+.navbar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  color: #010101;
+}
+
+.navbar__list a {
+  text-decoration: none;
+  padding: 12px 25px;
+  display: block;
+  color: black;
+}
+
+.navbar__list li {
+  margin-left: 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  text-align: center;
+}
+
+.navbar__list li.active a,
+.navbar__list li:hover a {
+  color: #ffffff;  
+}
+
+.navbar__list li.active,
+.navbar__list li:hover {
+  background: #ff7286;
+}
+
+.banner {
+  height: 450px;
+  position: relative;
+  background: url("../image/2.jpg") center/cover no-repeat;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.banner h1 {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  font-size: 60px;
+  font-weight: bold;
+  color: #ffffff;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section {
+  text-align: center;
+}
+
+.section__title {
+  display: inline-block;
+  margin: 60px 0 36px;
+  padding-left: 17px;
+  font-size: 36px;
+  font-weight: bold;
+  border-left: solid 15px #a3dea2;
+}
+
+.section__content {
+  font-size: 16px;
+  line-height: 2em;
+}
+
+.bottons .botton {
+  display: inline-block;
+  margin-top: 80px;
+  padding: 60px 80px;
+  font-size: 36px;
+  font-weight: bold;
+  background: #a8e8e1;
+  border-radius: 10px;
+  color: #3e613d;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.botton:nth-child(2) {
+  margin-left: 20px;
+  background: #f9f9b5;
+}
+
+.botton:hover {
+  transform: scale(1.05) translate(-5%, -5%);
+}
+
+.botton:nth-child(2):hover {
+  transform: scale(1.05) translate(5%, -5%);
+}
+
+.section__img {
+  display: flex;
+  width: 25%;
+}
+
+.section__img img {
+  width: 100%;
+}
+
+.section__comments {
+  display: flex;
+  justify-content: space-around;
+}
+
+.section__comments-each {
+  width:30%;
+}
+
+.section__comments-each:last-child {
+  margin-right: 0;
+}
+
+.section__comments-each img {
+  margin-bottom: 5px;
+  border: solid 1px #dfdfdf;
+  border-radius: 50%
+}
+
+.section__comments-each p {
+  margin: 0;
+  letter-spacing: 0.14px;
+}
+
+.avatar {
+  position: relative;
+  top: 75px;
+}
+
+.comments {
+  width: 90%;
+  padding: 90px 20px 20px;
+  line-height: 2em;
+  font-size: 16px;
+  border: solid 1px #c7e5ec;
+  border-radius: 5px;
+  box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
+}
+
+footer {
+  margin-top: 48px;
+}
+
+.footer__top {
+  padding: 32px;
+  font-size: 14px;
+  background: #e8efee;
+  color: #484848;
+}
+
+.footer__top .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__top-info {
+  font-family: "Questrial";
+  margin-right: 16px;
+  line-height: 2em;
+}
+
+.footer__top-right .footer__top-info {
+  margin-right: 0;
+}
+
+.footer__bottom {
+  font-family: "Questrial";
+  padding: 12px 12px;
+  font-size: 16px;
+  text-align: center;
+  background: #35564b;
+  color: #ffffff;
+}
+
+@media(max-width: 768px) {
+  .navbar .wrapper {
+    padding: 0;
+    height: 120px;
+    flex-direction: column;
+  }
+
+  .navbar__site-name {
+    margin-top: 12px;
+  }
+
+  .navbar__list {
+    width: 100%;
+    display: flex;
+  }
+
+  .navbar__list li {
+    flex: 1;
+    margin-left: 0;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .botton:nth-child(2) {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .botton:hover {
+    transform: scale(1.05);
+  }
+
+  .botton:nth-child(2):hover {
+    transform: scale(1.05);
+  }
+
+  .section__img {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer__top .wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .footer__top-right .navbar__site-name {
+    text-align: left;
+  }
+
+  .footer__top-right .footer__top-info {
+    margin-bottom: 15px;
+  }
+
+  .section__comments {
+    display: block;
+    justify-content: unset;
+  }
+
+  .section__comments-each {
+    display: inline;
+  }
+
+}
