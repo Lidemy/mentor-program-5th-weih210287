@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial&display=swap")
 
-h3, p {
+p {
   margin: 0;
 }
 
@@ -154,43 +154,48 @@ h3, p {
   width: 100%;
 }
 
-.section__comments {
+.section__comment {
   display: flex;
-  justify-content: space-around;
+  margin-top: 72px;
 }
 
-.section__comments-each {
-  width:30%;
-}
-
-.section__comments-each:last-child {
-  margin-right: 0;
-}
-
-.section__comments-each img {
-  margin-bottom: 5px;
-  border: solid 1px #dfdfdf;
-  border-radius: 50%
-}
-
-.section__comments-each p {
-  margin: 0;
-  letter-spacing: 0.14px;
-}
-
-.avatar {
+.section__comment-each {
+  width: 33%;
+  height: 240px;
   position: relative;
-  top: 75px;
-}
-
-.comments {
-  width: 90%;
-  padding: 90px 20px 20px;
-  line-height: 2em;
-  font-size: 16px;
+  padding: 16px;
   border: solid 1px #c7e5ec;
   border-radius: 5px;
   box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
+}
+
+.section__comment-each + .section__comment-each {
+  margin-left: 16px;
+}
+
+.author {
+  position: absolute;
+  display: inline-block;
+  top: 16px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.author p {
+  line-height: 16px;
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.avatar img {
+  border: solid 1px #dfdfdf;
+  border-radius: 50%;
+}
+
+.comment {
+  position: relative;
+  line-height: 1.5em;
+  top: 40%;
 }
 
 footer {
@@ -211,8 +216,11 @@ footer {
 
 .footer__top-info {
   font-family: "Questrial";
-  margin-right: 16px;
   line-height: 2em;
+}
+
+.navbar__site-name + .footer__top-info {
+  line-height: 0;
 }
 
 .footer__top-right .footer__top-info {
@@ -221,12 +229,19 @@ footer {
 
 .footer__bottom {
   font-family: "Questrial";
-  padding: 12px 12px;
+  padding: 0 12px;
   font-size: 16px;
   text-align: center;
   background: #35564b;
   color: #ffffff;
 }
+
+.footer__bottom-copyright {
+  margin: 0;
+  padding: 12px 0;
+}
+
+/*--RWD--*/
 
 @media(max-width: 768px) {
   .navbar .wrapper {
@@ -266,6 +281,19 @@ footer {
   .section__img {
     flex-direction: column;
     width: 100%;
+  }
+
+  .section__comment {
+    flex-direction: column;
+  }
+
+  .section__comment-each {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .section__comment-each + .section__comment-each {
+    margin-top: 70.5px;
   }
 
   .footer__top .wrapper {
