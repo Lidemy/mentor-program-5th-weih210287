@@ -10,22 +10,24 @@
   </head>
 
   <body>
-    <form>
-      <div class="form__top">
-        <h1 class="form__top-title">
+    <div class="wrapper">
+      <div class="top">
+        <h1 class="top_title">
           新拖延運動報名表單
         </h1>
-        <div class="form__top-info">
+        <div class="top_info">
           <p>
             活動日期：2020/12/10 ~ 2020/12/11
             <br>
             活動地點：台北市大安區新生南路二段1號
           </p>
         </div>
-        <div class="form__top-must">
+        <div class="top_must">
           *必填
         </div>
+      </div>
 
+      <form>
         <div class="form__questions">
           <div class="question">
             <div class="question__title must">
@@ -49,8 +51,12 @@
             <div class="question__title must">
               報名類型
             </div>
-            <div class="first-option"><input type="radio" name="option" id="op1" required /><label for="op1">躺在床上用想像力實作</label></div>
-            <div><input type="radio" name="option" id="op2"/><label for="op2">趴在地上滑手機找現成的</label></div>
+            <div class="option1">
+              <input type="radio" name="option" id="op1" required /><label for="op1">躺在床上用想像力實作</label>
+            </div>
+            <div class="option2">
+              <input type="radio" name="option" id="op2"/><label for="op2">趴在地上滑手機找現成的</label>
+            </div>
           </div>
           <div class="question">
             <div class="question__title must">
@@ -75,8 +81,8 @@
           </div>
         </div>
       </form>
-
     </div>
+
     <footer lang="en">
       © 2020 © Copyright. All rights Reserved.
     </footer>
