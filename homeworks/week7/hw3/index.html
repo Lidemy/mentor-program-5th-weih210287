@@ -17,15 +17,8 @@
         </div>
         <div class="list">
           <label class="add-here__icon">&#9755;<input type=text name="add" placeholder="add your TO-DOs here /"></label>
-          <div class="list__row">
-            <input type="checkbox" class="todo__check" id="test">
-            <div class="todo" for="test">星露谷大爆炸</div>
-            <button class="del__button" aria-label="Close alert" type="button" data-close>&#9587;</button>
-          </div>
-          
-          
+        
         </div>
-      </div>
 
       <footer lang="en">
         © 2020 © Copyright. All rights Reserved.
@@ -34,6 +27,7 @@
 
     <script>
       const addInput = document.querySelector("input[name=add]")
+      let num = 1
       addInput.addEventListener("keydown", function(e) {
         if (e.key === "Enter" && addInput.value) {
           const newList = document.createElement("div")
@@ -41,18 +35,18 @@
           newList.setAttribute("data-closable", "")
           newList.innerHTML = `
             <input type="checkbox" class="todo__check">
-            <div class="todo">${escapeHtml(addInput.value)}</div>
+            <label class="todo" for="${num}">${escapeHtml(addInput.value)}</label>
             <button class="del__button" aria-label="Close alert" type="button" data-close>&#9587;</button>
           `
-          
+          newList.querySelector("input[type=checkbox]").setAttribute("id", num)
           document.querySelector(".list").appendChild(newList)
+          num += 1
           addInput.value = ""
         }
       })
 
       const myList = document.querySelector(".list")
       myList.addEventListener("click", function(e) {
-
         if (e.target.classList.contains("del__button")) {
           myList.removeChild(e.target.closest(".list__row"))
         }
@@ -65,8 +59,6 @@
           }
         }        
       })
-
-      // document.getElementById("todoList").style.textDecoration="line-through"
 
       function escapeHtml(unsafe) {
         return unsafe
