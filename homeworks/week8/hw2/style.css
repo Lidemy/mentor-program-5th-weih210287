@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap");
+
+/*.debug *, .debug {
+  border: 1px solid gold;
+}
+*/
+html {
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h3, p {
+  margin: 0;
+  padding: 0;
+  font-family: "Do Hyeon";
+}
+
+body {
+  background: #1e022e;
+}
+
+.wrapper {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+nav {
+  box-shadow: -1.4px -1.4px 6px 0 #f6f6f7;
+  background: #a309f6;
+}
+
+/*background: linear-gradient(#e119e6, #e119e6, #344bcb)*/
+
+nav .wrapper {
+  display: flex;
+  padding: 0 20px;
+  height: 80px;
+  font-family: "Do Hyeon";
+  letter-spacing: 1px;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.navbar__list a {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+.navbar__list li {
+  transition: all 0.2s;
+  padding: 0 20px;
+}
+
+.navbar__list li.active a,
+.navbar__list li:hover a {
+  color: black;  
+}
+
+.navbar__list li.active,
+.navbar__list li:hover {
+  border-color: #333334;
+  border-style: dotted dashed none none;
+  background: #ffffff;
+}
+
+.cat__intro {
+  margin-top: 45px;
+  text-align: center;
+  font-family: "Do Hyeon";
+  color: #ffffff;
+}
+
+h1.cat__intro-title {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+.cat__intro-about {
+  margin: 20px 0 30px;
+  font-size: 1.5rem;
+}
+
+.streams {
+  display: flex;
+  max-width: 1700px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-around;
+  border: 10px solid;
+  border-image: linear-gradient(to left, rgb(62,3,255), rgb(213,58,157)) 1;
+  background: #ffffff;
+}
+
+.streams__stream {
+  margin: 50px 20px;
+  width: 360px;
+  border: 5px solid #1e022e;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+img.streams__stream-thumbnails {
+  width: 100%;
+}
+
+.streams__stream-info {
+  display: flex;
+  padding: 5px 0 5px 5px;
+  border-top: 1px solid #ffffff;
+  background: #1e022e;
+}
+
+.avatar {
+  width: 80px;
+  border-radius: 50%;
+}
+
+.streams__stream-steamer {
+  max-width: 240px;
+  margin-left: 15px;
+  line-height: 3em;
+  padding-top: 5px;
+  color: #ffffff;
+}
+
+h3.streamer-title {
+  font-size: 1.8rem;
+  font-family: Questrial;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+p.streamer-name {
+  font-size: 1.3rem;
+  font-family: Questrial;
+}
+
+.streams__stream-empty {
+  margin: 20px;
+  width: 360px;
+}
