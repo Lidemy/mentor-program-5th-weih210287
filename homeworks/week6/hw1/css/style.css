@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap")
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
 
 p {
   margin: 0;
 }
 
-.navbar {
+nav {
   box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
 }
 
-.navbar .wrapper {
+nav .wrapper {
   background: white;
   padding: 0 20px;
   height: 84px;
@@ -147,11 +147,11 @@ p {
 
 .section__img {
   display: flex;
-  width: 25%;
+  width: 100%;
 }
 
 .section__img img {
-  width: 100%;
+  width: 25%;
 }
 
 .section__comment {
@@ -244,7 +244,7 @@ footer {
 /*--RWD--*/
 
 @media(max-width: 768px) {
-  .navbar .wrapper {
+  nav .wrapper {
     padding: 0;
     height: 120px;
     flex-direction: column;
@@ -278,9 +278,12 @@ footer {
     transform: scale(1.05);
   }
 
+  .section__img img {
+    width: 100%;
+  }
+
   .section__img {
     flex-direction: column;
-    width: 100%;
   }
 
   .section__comment {

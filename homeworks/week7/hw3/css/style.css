@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
+
+body {
+  background: #e1e3dd;
+}
+
+h1, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.outer {
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 1200px;
+  text-align: center;
+  background: #f7faf6;
+  border-top: solid 8px #5d612d;
+  box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.top {
+  margin: 50px 0;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: Questrial;
+  color: #6c7034;
+  letter-spacing: 1.8px;
+}
+
+.list {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.add-here__icon {
+  display: flex;
+  font-size: 40px;
+  color: #595d2b;
+}
+
+input[name="add"]::placeholder {
+  font-family: Questrial;
+  color: #8c9175;
+}
+
+input[name="add"] {
+  width: 90%;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  padding-left: 5px;
+  font-size: 30px;
+  font-family: Questrial;
+  letter-spacing: 1px;
+}
+
+.list__row {
+  display: flex;
+  flex: 1;
+  margin-bottom: 20px;
+  position: relative;
+  color: #4e5a37;
+}
+
+.cross{
+  text-decoration: line-through;
+}
+
+.todo__check {
+  width: 20px;
+  height: 20px;
+}
+
+.todo {
+  width: 90%;
+  padding-left: 10px;
+  display: block;
+  position: relative;
+  text-align: left;
+  line-height: 22px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.todo:hover {
+  background: #7e8670;
+  color: #dfebdb;
+}
+
+button.del__button {
+  align-items: flex-start;
+  background: none;
+  border: none;
+}
+
+button.del__button:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+footer {
+  display: block;
+  padding: 20px 16px;
+  font-size: 13px;
+  color: #a1a796;
+  text-align: center;
+}
+
+@media(max-width: 768px) {
+
+}

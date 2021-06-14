@@ -58,7 +58,12 @@ Codepen 上的範例：
 所謂的 content 就是元素本身的內容，例如一段文字或一張圖片、padding 就是介於 border 和 content 間的距離、border 是包住 padding 和 content 框線、margin 則是位於最外層，border 和其他元素的距離。
 可以想成是一顆氣球， content 位於氣球核心、border 是氣球的皮，可以被看見也可以調整粗細、而 padding 就是往氣球裡吹氣或灌水，他會包住 content，並從內部撐開氣球、最後 margin 就是氣球和外部其他東西的距離。
 
-不同型態的 box modal 尺寸會有不同的計算方式，主要分成兩種型態：block box 和 inline box。
+計算 box model 寬高的 box-sizing 分為兩種：content-box 跟 border-box，而根據 box-sizing 的不同，會有不同的 margin, border 和 padding 的計算方式，這三個同時也是 css 在 box-model 中會用到的屬性。
+
+content-box 為 box-sizing 的預設值，也就是 css 在沒有特別設定的情下就是 content-box。content-box  的長寬會作用在 content 裡，假設今天元素的長寬各設為 100px 的話，那最後整個 box 的尺寸就會是 content 100px * 100px 再另外加上 margin, border 和 padding。
+border-box 的長寬則是會作用到 border，也就是說假設元素的長寬各設為 100px 的話，那整個 box 的長寬 100px * 100px 就會包括 border 和 padding，content 的長寬 css 會自己計算調整。
+
+border-box
 
 
 ## 請問 display: inline, block 跟 inline-block 的差別是什麼？
