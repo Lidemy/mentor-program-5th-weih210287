@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap");
 
-/*.debug *, .debug {
-  border: 1px solid gold;
-}
-*/
 html {
   font-size: 12px;
 }
@@ -33,8 +29,6 @@ nav {
   background: #a309f6;
 }
 
-/*background: linear-gradient(#e119e6, #e119e6, #344bcb)*/
-
 nav .wrapper {
   display: flex;
   padding: 0 20px;
@@ -50,12 +44,15 @@ nav .wrapper {
   margin: 0;
   padding: 0;
   width: 100%;
+  align-items: center;
   justify-content: space-around;
+  list-style: none;
 }
 
 .navbar__list a {
-  font-size: 2.5rem;
-  color: #ffffff;
+  font-size: 2rem;
+  transition: all 0.2s;
+  color: #1e022e;
 }
 
 .navbar__list li {
@@ -63,11 +60,7 @@ nav .wrapper {
   padding: 0 20px;
 }
 
-.navbar__list li.active a,
-.navbar__list li:hover a {
-  color: black;  
-}
-
+.navbar__list li:first-child,
 .navbar__list li.active,
 .navbar__list li:hover {
   border-color: #333334;
@@ -96,7 +89,7 @@ h1.cat__intro-title {
   display: flex;
   max-width: 1700px;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 0 20px;
   justify-content: space-around;
   border: 10px solid;
   border-image: linear-gradient(to left, rgb(62,3,255), rgb(213,58,157)) 1;
@@ -109,6 +102,11 @@ h1.cat__intro-title {
   border: 5px solid #1e022e;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
+  transition: all 0.1s;
+}
+
+.streams__stream:hover {
+  transform: scale(1.05);
 }
 
 img.streams__stream-thumbnails {
@@ -151,4 +149,25 @@ p.streamer-name {
 .streams__stream-empty {
   margin: 20px;
   width: 360px;
+}
+
+@media(max-width: 768px) {
+  nav .wrapper {
+    height: unset;
+  }
+
+  .navbar__list li {
+    color: #1e022e;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .streams {
+    min-width: 260px;
+  }
+
+  .streams__stream {
+    max-width: 200px;
+  }
 }

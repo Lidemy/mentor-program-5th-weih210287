@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>What to do?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+
+  <body>
+    <div class="outer">
+      <div class="wrapper">
+        <div class="top">
+          <a href="#"><h1>TO-DO LIST</h1></a>
+        </div>
+        <div class="list">
+          <label class="add-here__icon">&#9755;<input type=text name="add" placeholder="add your TO-DOs here /"></label>
+        
+        </div>
+
+      <footer lang="en">
+        © 2020 © Copyright. All rights Reserved.
+      </footer>
+    </div>
+
+    <script>
+      const addInput = document.querySelector("input[name=add]")
+      let num = 1
+      addInput.addEventListener("keydown", function(e) {
+        if (e.key === "Enter" && addInput.value) {
+          const newList = document.createElement("div")
+          newList.classList.add("list__row")
+          newList.setAttribute("data-closable", "")
+          newList.innerHTML = `
+            <input type="checkbox" class="todo__check">
+            <label class="todo" for="${num}">${escapeHtml(addInput.value)}</label>
+            <button class="del__button" aria-label="Close alert" type="button" data-close>&#9587;</button>
+          `
+          newList.querySelector("input[type=checkbox]").setAttribute("id", num)
+          document.querySelector(".list").appendChild(newList)
+          num += 1
+          addInput.value = ""
+        }
+      })
+
+      const myList = document.querySelector(".list")
+      myList.addEventListener("click", function(e) {
+        if (e.target.classList.contains("del__button")) {
+          myList.removeChild(e.target.closest(".list__row"))
+        }
+        
+        if (e.target.classList.contains("todo__check")) {
+          if (e.target.checked) {
+            e.target.parentNode.classList.add("cross")
+          } else {
+            e.target.parentNode.classList.remove("cross")
+          }
+        }        
+      })
+
+      function escapeHtml(unsafe) {
+        return unsafe
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+    </script>
+  </body>
+  
+</html>

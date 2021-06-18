@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>新拖延運動報名表單</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="top">
+        <h1 class="top_title">
+          新拖延運動報名表單
+        </h1>
+        <div class="top_info">
+          <p>
+            活動日期：2020/12/10 ~ 2020/12/11
+            <br>
+            活動地點：台北市大安區新生南路二段1號
+          </p>
+        </div>
+        <div class="top_must">
+          *必填
+        </div>
+      </div>
+
+      <form>
+        <div class="form__questions">
+          <div class="question must hide__notice">
+            <div class="question__title">
+              暱稱
+            </div>
+            <input name="nickname" type="text" placeholder="您的回答" />
+            <div class="required__notice">* 必填</div>
+          </div>
+          <div class="question must hide__notice">
+            <div class="question__title">
+              電子郵件
+            </div>
+            <input name="email" type="email" placeholder="您的電子郵件" />
+            <div class="required__notice">* 必填</div>
+          </div>
+          <div class="question must hide__notice">
+            <div class="question__title">
+              手機號碼
+            </div>
+            <input name="phone" type="text" placeholder="您的手機號碼" />
+            <div class="required__notice">* 必填</div>
+          </div>
+          <div class="question must hide__notice">
+            <div class="question__title">
+              報名類型
+            </div>
+            <div class="option1">
+              <input type="radio" name="option" id="op1" /><label for="op1">躺在床上用想像力實作</label>
+            </div>
+            <div class="option2">
+              <input type="radio" name="option" id="op2" /><label for="op2">趴在地上滑手機找現成的</label>
+            </div>
+            <div class="required__notice">* 必填</div>
+          </div>
+          <div class="question must hide__notice">
+            <div class="question__title">
+              怎麼知道這個活動的？
+            </div>
+            <input name="how" type="text" placeholder="您的回答" />
+            <div class="required__notice">* 必填</div>
+          </div>
+          <div class="question">
+            <div class="question__title no__must suggestion">
+              其他
+              <div class="advice">
+                對活動的一些建議
+              </div>
+            </div>
+            <input name="advice" type="text" placeholder="您的回答" />
+          </div>
+        </div>
+        <div class="submit">
+          <input name="submit" type="submit" value="提交"/>
+          <div class="warning">
+            請勿透過表單送出您的密碼。
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <footer lang="en">
+      © 2020 © Copyright. All rights Reserved.
+    </footer>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", function(e) {
+        e.preventDefault()
+        let hasError = false
+        let inputValues = {}
+
+        const elementsMust = document.querySelectorAll(".must")
+        for (let element of elementsMust) {
+          const inputMust = element.querySelector("input[type=text], [type=email]")
+          const radioMust = element.querySelectorAll("input[type=radio]")
+          let isValid = true
+
+          if (inputMust) {
+            inputValues[inputMust.name] = inputMust.value
+            if (!inputMust.value) {
+              isValid = false
+            }
+          } else if (radioMust.length) {
+            isValid = [...radioMust].some(radio => radio.checked)
+            if (isValid) {
+              let isChecked = element.querySelector("input[type=radio]:checked")
+              inputValues[isChecked.name] = isChecked.value
+            }
+          } else {
+            continue
+          }
+
+          if (!isValid) {
+            element.classList.remove("hide__notice")
+            hasError = true
+          } else {
+            element.classList.add("hide__notice")
+          }
+        }
+
+        const adviceInput = document.querySelector("input[name=advice]")
+        inputValues[adviceInput.name] = adviceInput.value
+
+        if(!hasError) {
+          alert(JSON.stringify(inputValues))
+        }        
+      })
+      
+    </script>
+  </body>
+  
+</html>
