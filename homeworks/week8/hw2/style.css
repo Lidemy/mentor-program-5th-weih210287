@@ -151,6 +151,7 @@ p.streamer-name {
   width: 360px;
 }
 
+/*--RWD--*/
 @media(max-width: 768px) {
   nav .wrapper {
     height: unset;
