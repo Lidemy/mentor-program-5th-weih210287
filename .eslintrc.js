@@ -3,9 +3,11 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
-    jest: true
+    jest: true,
+    jquery: true
   },
-  extends: '@lidemy/eslint-config-lidemy',
+  plugins: ['jquery'],
+  extends: ['@lidemy/eslint-config-lidemy', 'plugin:jquery/deprecated'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
