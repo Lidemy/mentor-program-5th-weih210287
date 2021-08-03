@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
+
+* {
+  font-family: Questrial;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+body {
+  background: #ffffff;
+}
+
+nav {
+  background: #746fbb;
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1700px;
+  text-align: center;
+}
+
+nav .wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.wrapper.action {
+  margin-top: 120px;
+}
+
+.member__btn {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  text-decoration: underline;
+  font-size: 14px;
+  color: #4d457b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.register-btn:hover {
+  color: #ff9393;
+}
+
+.member__btn.top {
+  margin: 0 auto;
+  padding-right: 5px;
+  max-width: 35%;
+  justify-content: flex-end;
+}
+
+.member__btn.top:hover {
+  color: #ff9393;
+}
+
+.member__btn.bottom {
+  text-decoration: unset;
+  justify-content: center;
+}
+
+.member__btn.bottom a {
+  text-decoration: underline;
+}
+
+a.navbar__site-name {
+  padding: 3px;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffbcbc;
+  border: 2px dashed transparent;
+  transition: all 0.2s;
+}
+
+a.navbar__site-name:hover {
+  border: 2px dashed #11131d;
+}
+
+.navbar__list {
+  display: flex;
+  flex: 1;
+  margin: 25px 0 20px;
+  padding: 0 15px 0 20px;
+  letter-spacing: 20px;
+  justify-content: space-between;
+  color: #ccd3ff;
+  font-weight: bold;
+}
+
+.navbar__list li {
+  display: unset;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.navbar__list li a {
+  padding-bottom: 3px;
+  transition: all 0.2s;
+}
+
+.navbar__list li a:hover {
+  border-bottom: 2px dashed #ffbcbc;
+  text-shadow: none;
+}
+
+a.login-logout-btn {
+  padding: 3px;
+  color: #ff9393;
+  background: #ffffff;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+a.login-logout-btn:hover {
+  color: #58619c;
+}
+
+.banner {
+  padding: 76px 0 140px;
+  text-align: center;
+  font-family: Questrial;
+  color: #fff3f1;
+  text-shadow:1px 1px 1px red;
+  background-image: linear-gradient(to top,  #a2d2ff, #cdb4db);
+}
+
+h1.banner__title {
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  font-size: 28px;
+}
+
+h3.banner__subtitle {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.cards {
+  margin: 0 auto;
+  width: 70%;
+  position: relative;
+  top: -60px;
+  border: 10px solid #ffffff;
+  background: #ffffff;
+}
+
+.cards.admin {
+  padding-top: 10px;
+  text-align: right;
+}
+
+.cards__edit-post-btn {
+  text-align: right;
+}
+
+.cards__edit-post-btn ~ .cards__edit-post-btn {
+  margin-top: 25px;
+}
+
+.card {
+  position: relative;
+  margin-bottom: 25px;
+  padding: 30px 30px 20px;
+  text-align: left;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to top, #ffe1da, #cbb5dc, #a5cffc);
+  background: #ffffff;
+}
+
+.card.post {
+  padding-bottom: 100px;
+}
+
+.card.admin, .card.posts-list {
+  margin-bottom: 25px;
+  padding: 40px 30px 20px 10px;
+  border-image-source: linear-gradient(to top, #ffe1da, #a5cffc, #bdbfe8, #bdbfe8);
+}
+
+.card.add_post {
+  padding: 20px 30px 20px 10px;
+}
+
+.card.admin ~ .card.admin{
+  margin-top: 0;
+}
+
+.card.action {
+  margin: 2px auto 200px;
+  padding: 50px 40px 100px;
+  max-width: 35%;
+  box-sizing: border-box;
+}
+
+.card.action h1 {
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: lighter;
+  color: #4d457b;
+}
+
+.info__warning {
+  text-align: center;
+  color: #a20606;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.action__input-title {
+  color: #4d457b;
+  font-size: 14px;
+}
+
+.action__input-title input, .action__input-title.add_post textarea {
+  margin-top: 10px;
+  padding: 5px;
+  width: 97%;
+  letter-spacing: 1px;
+  font-size: 18px;
+  border: 1px solid #4d457b;
+}
+
+.action__input-title.add_post textarea, .action__input-title.add_post input {
+  width: 98%;
+  color: #384075;
+  border: 1px solid #58619c;
+}
+
+.action__input-title input {
+  font-size: 22px;
+}
+
+.action__input-title.add_post {
+  color: #58619c;
+  display: grid;
+}
+
+.action__input-title ~ .action__input-title {
+  margin-top: 20px;
+}
+
+.action__submit-btn {
+  margin: 70px 0 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.action__submit-btn.add_post {
+  margin: 30px 0 10px;
+  text-align: right;
+  letter-spacing: 3px;
+}
+
+input[type="submit"] {
+  padding: 5px;
+  width: 100%;
+  font-size: 16px;
+  color: #58619c;
+  background-image: linear-gradient(to top,  #a2d2ff, #cdb4db);
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to top,  #a2d2ff, #cdb4db);
+  cursor: pointer;
+}
+
+.add_post input[type="submit"] {
+  width: 30%;
+  transition: all 0.2s;
+}
+
+input[type="submit"]:hover {
+  color: #ffffff;
+  background-image: linear-gradient(to bottom,  #a2d2ff, #cdb4db);
+  border: 3px inset;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to bottom,  #a2d2ff, #cdb4db);
+}
+
+.card__top {
+  display: flex;
+  line-height: 1.5em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1.card__top-title, h1.banned, h1.err {
+  letter-spacing: 1px;
+  font-family: 'Noto Sans', sans-serif;
+  color: #4d4a8a;
+  font-size: 22px;
+}
+
+h1.banned, h1.err {
+  color: #ff8d8d;
+  text-shadow: 1px 1px 1px #820000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1.add_post {
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.card__top-title a {
+  transition: all 0.2s;
+}
+
+.card__top-title a:hover {
+  color: #ffbcbc;
+}
+
+.card__top-edit-btn {
+  padding: 5px 10px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: #ff9393;
+  border: 1px solid #ff9393;
+  transition: all 0.2s;
+}
+
+.page-btn {
+  text-align: right;
+}
+
+.card__top-edit-btn:hover {
+  color: #524a8a;
+  border-color: #524a8a;
+}
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 30px;
+  padding: 12px 10px 15px;
+  color: #ffffff;
+  background: #bdbfe8;
+}
+
+.card__info.admin {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 5px 10px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card__content {
+  height: 150px;
+  overflow: hidden;
+}
+
+.card__content.post {
+  height: unset;
+  overflow: unset;
+}
+
+.card__content p {
+  margin: 0;
+  white-space: pre-line;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-family: Questrial;
+  color: #384075;
+}
+
+.card__readmore-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #58619c;
+  border: 1px solid #58619c;
+  transition: all 0.2s;
+}
+
+.card__readmore-btn:hover {
+  font-weight: bold;
+  color: #58619c;
+  border-color: #58619c;
+}
+
+.paginator__count-page {
+  color: #384075;
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #fefefe;
+  background: #746fbb;
+}
