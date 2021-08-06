@@ -24,10 +24,14 @@ $(document).ready(() => {
       $('input.todo-input').val('')
     }
   })
-  // X 單項刪除 todo
-  $('.list-group').on('click', '.list-group-item', function() {
-    console.log($(this).find('input').prop('checked'))
+  // checked 劃掉
+  $('.list-group').on('click', '.list-group-item', (e) => {
+    if ($(e.target).find('input').prop('checked')) {
+      console.log(e.target)
+    }
   })
+
+  // X 單項刪除 todo
 
   // dbClick 編輯 todo
 })
