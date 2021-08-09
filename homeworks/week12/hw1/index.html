@@ -9,108 +9,13 @@
   <link rel="stylesheet" href="./style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
-  <script>
-    $(document).ready((e) => {
-      // 讀取 comments
-      $.ajax({
-        url: 'http://localhost/board/hw/w12/hw1/api_comments.php?site_key=1'
-      })
-      .done((data) => {
-        if (!data.ok) {
-          alert(data.message)
-          return
-        }
-
-        const allComments = data.comments
-        const limit = 5
-        const totalPage = Math.ceil(allComments.length / limit)
-        let page = 1
-        let start = 0
-        let end = allComments.length
-
-        // 顯示留言、首頁
-
-        // 判斷 total 有多少留言，<= 5 就在一開始把 read more 按鈕藏起來
-        if (totalPage === 1) {
-          $('.btn-load').hide()
-        } else {
-          start = 0
-          end = limit
-        }
-        loadComments(start, end, allComments)
-
-        // Load More
-        $('.btn-load').click(() => {
-          page += 1
-          let offset = (page - 1) * limit
-          start = offset
-
-          if (page < totalPage) {
-            end = offset + limit
-          } else if (page === totalPage) {
-            $('.btn-load').hide()
-            end = allComments.length
-          }
-
-          loadComments(start, end, allComments)
-        })
-      })
-
-      // 新增 comment
-      $('.comments-submit-form').submit((e) => {
-        e.preventDefault()
-        $.ajax({
-          type: 'POST',
-          url: 'http://localhost/board/hw/w12/hw1/api_add_comments.php',
-          data: {
-            nickname: $('input[name="nickname"]').val(),
-            content: $('textarea[name="content"]').val(),
-            site_key: $('input[name="site_key"]').val()
-          }
-        })
-        .done((data) => {
-          console.log(data)
-          if (!data.ok) {
-            return alert(data.message)
-          }
-          location.reload()
-        })
-      })
-    })
-
-    // 動態新增留言
-    function loadComments(start, end, comments) {
-      for (let i = start; i < end; i++) {
-        $('.cards').append(`
-          <div class="card">
-            <div class="card-body d-flex justify-content-between">
-              <p class="card-text">${escapeHtml(comments[i].content)}</p>
-              <div class="card-info text-end">${escapeHtml(comments[i].create_at)} 
-                <p class="card-nickname">— ${escapeHtml(comments[i].nickname)}</p>
-              </div>
-            </div>
-          </div>
-        `)
-      }
-    }
-
-    function escapeHtml(unsafe) {
-      return unsafe
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    }
-  </script>
-
 </head>
 
 <body>
   <div class="container mb-3 text-center">
     <form class="comments-submit-form">
       <div class="form-title mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label display-6">Comment</label>
+        <label for="exampleFormControlTextarea1" class="progress-bar progress-bar-striped progress-bar-animated form-label h1 form-label">Comment</label>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Nickname</label>
           <input name="nickname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your nickname here!" />
@@ -121,14 +26,11 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <div class="cards mt-5 mb-3 text-start">
-      <h5 class="card-header">
-        Comments
-      </h5>
-
-    </div>
+    <div class="cards mt-5 mb-3 text-start"></div>
     <button class="btn btn-primary btn-load">Read More...</button>
   </div>
+
+  <script src="./index.js"></script>
 </body>
 
 </html>

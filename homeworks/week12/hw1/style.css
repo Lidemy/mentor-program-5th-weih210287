@@ -7,6 +7,11 @@ form {
   text-align: right;
 }
 
+.progress-bar {
+  border-radius: 3px;
+  background-color: #d05353;
+}
+
 .form-title {
   text-align: left;
   color: #d05353;
@@ -47,6 +52,7 @@ form {
 
 .cards {
   background: #b77a7a;
+  border-top: 1px solid #b77a7a;
   border-radius: .25rem;
 }
 
@@ -58,12 +64,6 @@ form {
 
 .card:last-child {
   border-radius: 0 0 0.25rem 0.25rem;
-}
-
-.card-header {
-  background: #d05353;
-  color: #fff9f4;
-  border-bottom: 5px solid #ffe85b;
 }
 
 .card-info {

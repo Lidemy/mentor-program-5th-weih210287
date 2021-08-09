@@ -19,14 +19,22 @@
   $site_key = $_GET['site_key'];
 
   $stmt = $conn->prepare(
-    'SELECT content, nickname, create_at '.
-    'FROM api_comments '.
+    'SELECT * '.
+    'FROM gz_api_comments '.
     'WHERE site_key = ? '.
-    'ORDER BY create_at DESC'
+    (empty($_GET['before']) ? '' : 'AND id < ? ') .
+    'ORDER BY create_at DESC LIMIT 5'
   );
-  $stmt->bind_param('s', $site_key);
+
+  if (empty($_GET['before'])) {
+    $stmt->bind_param('s', $site_key);
+  } else {
+    $stmt->bind_param('si', $site_key, $_GET['before']);
+  }
+  
+  
   $result = $stmt->execute();
-  if (!$result ) {
+  if (!$result) {
     $json = array(
       'ok' => false,
       'message' => $conn->error
@@ -43,6 +51,7 @@
   $comments = array();
   while ($row = $result->fetch_assoc()) {
     array_push($comments, array(
+      'id' => $row['id'],
       'content' => $row['content'],
       'nickname' => $row['nickname'],
       'create_at' => $row['create_at']
