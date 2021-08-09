@@ -49,7 +49,6 @@ input.todo-input:before {
 }
 
 .list-group-item {
-  color: #4d4d4d;
   text-align: left;
   font-size: 24px;
   border: none;
@@ -60,6 +59,16 @@ input.todo-input:before {
 .list-group-item:hover {
   z-index: 1;
   box-shadow: 0 0 25px 10px rgb(206 206 206 / 17%);
+}
+
+.content {
+  color: #4d4d4d;
+  transition: all 0.2s ease-out;
+}
+
+input[type=checkbox]:checked ~ label {
+  color: #e6e6e6;
+  text-decoration: line-through;
 }
 
 .item-destory {
@@ -77,23 +86,28 @@ input.todo-input:before {
   border: unset;
 }
 
+.content-update {
+  width: 100%;
+}
+
 .hide {
-  display: none;
+  display: none!important;
 }
 
 .card-footer {
   background: #fefefe;
+  color: #9ba1a6;
   border-radius: 0!important;
 }
 
-.selector {
+.card-footer-selectors span {
   padding: 3px 7px;
   color: #777777;
   border: 1px solid transparent;
   cursor: pointer;
 }
 
-.selector.active, .selector:hover {
+.card-footer-selectors span.active, .card-footer-selectors span:hover {
   border: 1px solid #efd5d5;
   border-radius: 3px;
 }
