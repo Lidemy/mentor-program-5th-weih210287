@@ -19,6 +19,7 @@ module.exports = {
     ecmaVersion: 2018
   },
   rules: {
+    indent: ['error', 2],
     'no-console': 'off',
     'jquery/no-ajax': 2,
     'jquery/no-ajax-events': 2,
