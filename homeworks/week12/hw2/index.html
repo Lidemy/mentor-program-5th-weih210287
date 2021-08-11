@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>w12 Todo List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="./index.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="display-1 web-title">todos</h1>
+    <div class="card">
+      <label class="add-here d-flex text-left">▼<input class="todo-input" placeholder="What needs to be done?" /></label>
+      <ul class="list-group">
+       <!--  <li class="list-group-item">
+          <div class="item-view d-flex justify-content-between">
+            <div class="item-view-content">
+              <input class="form-check-input me-1" type="checkbox" id="0" aria-label="...">
+              <span class="content" for="0">First checkbox</span>
+            </div>
+            <button class="item-destory" onclick="warning()">X</button>
+          </div>
+          <textarea class="hide content-update" rows="1"></textarea>
+        </li> -->
+        
+      </ul>
+      <div class="card-footer d-flex justify-content-between">
+        <div class="card-footer-counter">
+        </div>
+        <div class="card-footer-selectors">
+          <span class="selector m-1 active" data-value="all">All</span>
+          <span class="selector m-1" data-value="active">Active</span>
+          <span class="selector m-1" data-value="completed">Completed</span>
+          <span class="save-btn m-1">Save</span>
+        </div>
+        <div class="card-footer-clear" onclick="warning()">
+          clear completed
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
