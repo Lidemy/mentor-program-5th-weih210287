@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
+@import "_varlable.scss";
+
+* {
+  font-family: $font-1;
+}
+
+a {
+  text-decoration: $none-text-decoratin;
+  color: $unset-color;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+body {
+  background: $white;
+}
+
+nav {
+  background: $theme-color-1;
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  & .wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+  }
+}
+
+.wrapper {
+  margin: $margin-center;
+  max-width: $width;
+  text-align: center;
+  &.action {
+    margin-top: 120px;
+  }
+}
+
+.member__btn {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  text-decoration: underline;
+  font-size: $font-size-6;
+  color: $theme-color-5;
+  cursor: $cursor-1;
+  transition: $transition-1;
+  &.top {
+    margin: $margin-center;
+    padding-right: 5px;
+    max-width: 35%;
+    justify-content: flex-end;
+    &:hover {
+      color: $btn-color;
+    }
+  }
+  &.bottom {
+    text-decoration: $none-text-decoratin;
+    justify-content: center;
+    & a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.register-btn:hover {
+  color: $btn-color;
+}
+
+a.navbar__site-name {
+  padding: $padding-1;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: $font-size-1;
+  font-weight: $font-weight-bold;
+  color: $theme-color-4;
+  border: 2px dashed transparent;
+  transition: $transition-1;
+  &:hover {
+    border: 2px dashed #11131d;
+  }
+}
+
+.navbar__list {
+  display: flex;
+  flex: 1;
+  margin: 25px 0 20px;
+  padding: 0 15px 0 20px;
+  letter-spacing: $letter-spacing-3;
+  justify-content: space-between;
+  font-weight: $font-weight-bold;
+  color: $theme-color-3;
+  & li {
+    display: unset;
+    font-size: $font-size-6;
+    letter-spacing: $letter-spacing-1;
+    & a {
+      padding-bottom: 3px;
+      transition: $transition-1;
+      &:hover {
+        border-bottom: 2px dashed $theme-color-4;
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+a.login-logout-btn {
+  padding: $padding-1;
+  color: $btn-color;
+  background: $white;
+  border-radius: 3px;
+  transition: $transition-1;
+  &:hover {
+    color: $theme-color-6;
+  }
+}
+
+.banner {
+  padding: 76px 0 140px;
+  text-align: center;
+  font-family: $font-1;
+  color: #fff3f1;
+  text-shadow: $text-shadow red;
+  background-image: $linear-background-1-top;
+  &__title {
+    margin-bottom: 15px;
+    letter-spacing: $letter-spacing-2;
+    font-size: $font-size-2;
+  }
+  &__subtitle {
+    font-size: $font-size-6;
+    font-weight: $font-weight-normal;
+  }
+}
+
+.cards {
+  margin: $margin-center;
+  width: 70%;
+  position: relative;
+  top: -60px;
+  border: 10px solid $white;
+  background: $white;
+  &.admin {
+    padding-top: 10px;
+    text-align: right;
+  }
+  &__edit-post-btn {
+    text-align: right;
+    & ~ & {
+      margin-top: 25px;
+    }
+  }
+}
+
+.card {
+  position: relative;
+  padding: 30px 30px 20px;
+  text-align: left;
+  border: $border-2;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to top, #ffe1da, #cbb5dc, #a5cffc);
+  background: $white;
+  &.add_post {
+    padding: 20px 30px 20px 10px;
+  }
+  & ~ & {
+    margin-top: 25px;
+  }
+  &.admin ~ &.admin {
+    margin-top: 0;    
+  }
+  &.action {
+    margin: 2px auto 200px;
+    padding: 50px 40px 100px;
+    max-width: 35%;
+    box-sizing: border-box;
+    & h1 {
+      margin-bottom: 60px;
+      text-align: center;
+      font-size: 32px;
+      font-weight: $font-weight-lighter;
+      color: $theme-color-5;
+    }
+  }
+}
+
+.info__warning {
+  text-align: center;
+  color: $warning-color;
+  margin-bottom: 20px;
+  font-size: $font-size-4;
+}
+
+.action__input-title {
+  color: $theme-color-5;
+  font-size: $font-size-6;
+  & input {
+    font-size: $font-size-3;
+  }
+  &.add_post {
+    display: grid;
+    color: $theme-color-6;
+  }
+  & input, &.add_post textarea {
+    margin-top: 10px;
+    padding: $padding-2;
+    width: 97%;
+    letter-spacing: $letter-spacing-1;
+    font-size: $font-size-4;
+    border: $border-1 $theme-color-5;
+  }
+  &.add_post input, &.add_post textarea {
+    width: 98%;
+    color: $theme-color-7;
+    border: $border-1 $theme-color-6;
+  }
+  & ~ & {
+    margin-top: 20px;
+  }
+}
+
+.action__submit-btn {
+  margin: 70px 0 10px;
+  text-align: center;
+  font-size: $font-size-5;
+  &.add_post {
+    margin: 30px 0 10px;
+    text-align: right;
+    letter-spacing: $letter-spacing-2;
+  }
+}
+
+input[type="submit"] {
+  padding: $padding-2;
+  width: 100%;
+  font-size: $font-size-5;
+  color: $theme-color-6;
+  background-image: $linear-background-1-top;
+  border: 3px solid;
+  border-image-slice: 1;
+  border-image-source: $linear-background-1-top;
+  cursor: $cursor-1;
+  .add_post & {
+    width: 30%;
+    transition: $transition-1;
+  }
+  &:hover {
+    background-image: $linear-background-1-bottom;
+    border: 3px inset;
+    border-image-slice: 1;
+    border-image-source: $linear-background-1-bottom;
+  }
+}
+
+.card__top {
+  display: flex;
+  line-height: $line-height;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  &.banned {
+    @extend %h1;
+  }
+  &.card__top-title {
+    @extend %h1;
+  } 
+}
+
+%h1 {
+  letter-spacing: $letter-spacing-1;
+  font-family: $font-2;
+  font-size: $font-size-3;
+  color: #4d4a8a;
+}
+
+h1.banned {
+  margin-bottom: 20px;
+  text-shadow: $text-shadow #820000;
+  text-align: center;
+  color: #ff8d8d;
+}
+
+h1.add_post {
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.card__top-title a {
+  transition: $transition-1;
+  &:hover {
+    color: $theme-color-4;
+  }
+}
+
+.page-btn {
+  text-align: right;
+}
+
+.card__top-edit-btn {
+  padding: 5px 10px;
+  letter-spacing: $letter-spacing-1;
+  font-size: 12px;
+  color: $btn-color;
+  border: $border-1 $btn-color;
+  transition: $transition-1;
+  &:hover {
+    color: $edit-btn-color;
+    border-color: $edit-btn-color;
+  }
+}
+
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 30px;
+  padding: 12px 10px 15px;
+  color: $white;
+  background: $theme-color-2;
+  &.admin {
+    box-sizing: border-box;
+    margin: 0;
+    padding: $padding-3;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.card__content {
+  height: 150px;
+  overflow: hidden;
+  &.post {
+    height: unset;
+    overflow: unset;
+  }
+  & p {
+    margin: 0;
+    white-space: pre-line;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing-1;
+    font-size: 15px;
+    font-family: $font-1;
+    color: $theme-color-7;
+  }
+}
+
+.card__readmore-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 15px;
+  font-size: $font-size-6;
+  color: $theme-color-6;
+  border: $border-1 $theme-color-6;
+  transition: $transition-1;
+  &:hover {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.paginator__count-page {
+  color: $theme-color-7;
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+  font-size: $font-size-6;
+  color: #fefefe;
+  background: $theme-color-1;
+}
