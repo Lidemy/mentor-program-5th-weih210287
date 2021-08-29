@@ -1,4 +1,5 @@
 /* eslint-disable */
+/* eslint-disable no-cond-assign*/
 import $ from 'jquery'
 import { cssTemplate, getForm } from './template'
 import { getCommentsAPI, addCommentsAPI } from './api'
