@@ -1,0 +1,73 @@
+body {
+  background: #ffe8d43d;
+  color: #a25a34;
+}
+
+form {
+  text-align: right;
+}
+
+.progress-bar {
+  border-radius: 3px;
+  background-color: #d05353;
+}
+
+.form-title {
+  text-align: left;
+  color: #d05353;
+}
+
+.form-control, .form-control:focus {
+  padding-left: 5px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #a25a34;
+  border-color: #b77a7a;
+}
+
+.form-control::placeholder { 
+  color:  #b77a7a;
+  opacity: 1;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgb(183 122 122 / 25%);
+}
+
+.btn-primary, .btn-primary:focus, .btn-primary:active:focus {
+  background-color: #ff9359;
+  border-color: #ffe85b;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:hover:focus, .btn-primary:active:hover:focus {
+  color: #ff9359;
+  background: #ffffff;
+  border-color: #ff9359;
+}
+
+.btn-primary:focus, .btn-primary:active:focus {
+  color: #ffffff;
+  box-shadow: 0 0 0 0.25rem #ffe8ae;
+}
+
+.cards {
+  background: #b77a7a;
+  border-top: 1px solid #b77a7a;
+  border-radius: .25rem;
+}
+
+.card {
+  border: solid #b77a7a;
+  border-width: 0 1px 1px;
+  border-radius: 0;
+}
+
+.card:last-child {
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+
+.card-info {
+  width: 100%;
+  color: #c3ab9f;
+  text-align: right;
+}
