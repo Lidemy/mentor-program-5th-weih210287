@@ -7,7 +7,6 @@ Google 為了提供使用者更好的網路瀏覽體驗，自行開發了一個�
 
 另一方面， Google 也可以透過提供這項服務來強化自己的搜尋引擎，蒐集使用者的瀏覽偏好，讓大家有更好的使用體驗。
 
-
 [DNS 伺服器是什麼？](https://www.stockfeel.com.tw/dns-%E4%BC%BA%E6%9C%8D%E5%99%A8%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9F%E5%A6%82%E4%BD%95%E9%81%8B%E7%94%A8%EF%BC%9F/)
 [Google Public DNS](https://developers.google.com/speed/public-dns/faq#nxdomains)
 [《Google Public DNS》](https://steachs.com/archives/1364)
@@ -23,8 +22,8 @@ lock 是指在更新資料以前先為這筆資料加上一個狀態，將其鎖
 
 要注意的是 lock 只在 Transaction 裡有效。
 
-
 [資料庫的交易鎖定 Locks](https://www.qa-knowhow.com/?p=383)
+
 
 ## SQL 跟 NoSQL 的差別在哪裡？
 SQL (Structured Query Language) 結構化查詢語言，是指在操作關聯式資料庫時所使用的程式語言，也因為結構化的關係，儲存的資料內容較嚴謹，資料表之間彼此存在著關聯性，適合用來做複雜的資料查詢、儲存重要的資料，但同時資料庫的擴充性也相對較弱，成本也較高。
@@ -33,7 +32,6 @@ SQL (Structured Query Language) 結構化查詢語言，是指在操作關聯式
 NoSQL (Not only SQL) 管理非關聯式資料庫系統的統稱。 通常以 JSON 格式儲存資料，和 SQL 系統最大的不同是 NoSQL 系統裡的資料不需經過規劃且不支援 JOIN。雖然資料查詢的速度較慢，但使用起來彈性較大可擴充性也較高，適合用來存資料結構不固定，不需要做過於複雜的查詢的資料。
 常見的使用 NoSQL 的資料庫如 MongoDB、Redis、Apache 等等。
 
-
 ### 參考資料
 [SQL 與 NoSQL](https://ithelp.ithome.com.tw/articles/10187443)
 [SQL/NoSQL是什麼？](https://tw.alphacamp.co/blog/sql-nosql-database-dbms-introduction)
@@ -41,18 +39,18 @@ NoSQL (Not only SQL) 管理非關聯式資料庫系統的統稱。 通常以 JSO
 [干货 | SQL 与 NoSQL还在傻傻分不清？](https://zhuanlan.zhihu.com/p/63371253)
 [什麼是SQL？什麼是NOSQL? ](https://codegym.tech/blog/sql_vs_nosql.html)
 
+
 ## 資料庫的 ACID 是什麼？
 ACID 是 Transaction 為了確保更新資料庫資料的正確性所具備的 4 個特性。
 
 Transaction 是將一個或多個對資料庫的指令，包在同一個任務裡執行。
 舉例來說，今天有一家網購平台，消費者在平台上買了一條橡皮擦，這時他的訂單裡的橡皮擦樹會 " +1"，同時平台架上的橡皮擦庫存總數應該要 "-1" 這樣兩邊的數才會平衡。也就是說雖然只有消費者執行了購買這個動作，但其實背後應該要下兩條 SQL 指令，但是如果每下一次 SQL 就要 commit 一次的話執行效率並不是很好，如果同時有很多消費者都在下單，那每個人下單一次，server 就要 commit 兩次豈不是忙死？所以更好的方式是把這些指令全都包在一個 Transaction 裡，一次執行後再 commit。
 
-但這個過程中難保不會出差錯，所以 Transaction 具備了 ACID 四個特性，分別為：
+但這個過程中難保不會出錯，所以 Transaction 具備了 ACID 四個特性，分別為：
 Atomicity 原子性：Transaction 的更動不是全部成功就是全部失敗，如果中途出錯就回滾到最一開始的狀態，因此不會有一半資料更新成功一半失敗的情況發生。
 Consistency 一致性：Transaction 更動前後資料都必須遵守資料庫的約束，才能保持資料的完整性。例如資料庫有約束每個帳戶的餘額不得為負，那麼如果 A 有 100 塊，要轉帳給 B 200 塊的話，Transaction 就會失敗，因為成功的話 A 的帳路餘額就會變成 -100 塊，不符合當初資料庫的約束。
 Isolation 隔離性：為了確保資料不會同時受到多個 Transaction 更動而導致資料庫發生衝突或 Transaction 錯誤的情況發生，會將更動中的資料隔離。
 Durability 持久性：Transaction 結束後，對資料的更動就是永久的。
-
 
 [如何理解数据库事务中的一致性的概念？](https://www.zhihu.com/question/31346392)
 [ACID 維基](https://zh.wikipedia.org/wiki/ACID)
