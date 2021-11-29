@@ -1,12 +1,9 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-  color: ${(props) =>
-    props.$theme === `darkcyan`
-      ? props.theme.darkcyan.btnFont
-      : props.theme.salmon.btnFont};
+  color: ${(props) => props.theme.main.btnFont};
   background: ${(props) =>
-    props.$theme === `salmon` && props.theme.salmon.second};
+    props.$theme === `salmon` && props.theme.main.second};
   border: 1px solid #767676;
   border-radius: ${(props) => (props.$br15 ? `15px` : `3px`)};
 
@@ -28,10 +25,7 @@ const Button = styled.button`
 
 const TodoButton = styled(Button)`
   margin-left: 15px;
-  color: ${(props) =>
-    props.$theme === `darkcyan`
-      ? props.theme.darkcyan.btnFont
-      : props.theme.salmon.btnFont};
+  color: ${(props) => props.theme.main.btnFont};
 `;
 
 const FilterButtons = styled.div`

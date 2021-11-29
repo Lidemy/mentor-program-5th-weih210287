@@ -1,32 +1,10 @@
-import styled from "styled-components";
-import TodoItem from "./TodoItem.js";
-import ThemeSelector from "./ThemeSelector.js";
 import { useState } from "react";
+import styled from "styled-components";
+import GlobalStyle from "./Constants/GlobalStyle.js";
+import { ThemeProvider } from "styled-components";
+import ThemeSelector from "./ThemeSelector.js";
+import TodoItem from "./TodoItem.js";
 import { Button, FilterButtons } from "./Button.js";
-
-const Background = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  color: ${(props) =>
-    props.$theme === `darkcyan`
-      ? props.theme.darkcyan.font
-      : props.theme.salmon.font};
-  background: ${(props) =>
-    props.$theme === `darkcyan`
-      ? props.theme.darkcyan.rgba
-      : props.theme.salmon.rgba};
-  background-image: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.3) 1px,
-      transparent 0
-    ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 0);
-  background-size: 15px 15px, 15px 15px;
-`;
 
 const Wrapper = styled.div`
   margin: 50px auto 0;
@@ -51,10 +29,7 @@ const AddTodoInput = styled.input`
   width: 80%;
 
   &::placeholder {
-    color: ${(props) =>
-      props.$theme === `darkcyan`
-        ? props.theme.darkcyan.fade
-        : props.theme.salmon.fade};
+    color: ${(props) => props.theme.main.fade};
   }
 `;
 
@@ -74,6 +49,30 @@ function App() {
   const [value, setValue] = useState("");
   const [filter, setFilter] = useState("All");
   const [theme, setTheme] = useState("darkcyan");
+
+  const themeColor =
+    theme === "darkcyan"
+      ? {
+          main: {
+            rgba: "rgba(50, 70, 100, 0.3)",
+            bg: "#c1c7d0",
+            font: "#496660",
+            btnFont: "darkcyan",
+            fade: "#c1c7d0",
+            main: "darkcyan",
+          },
+        }
+      : {
+          main: {
+            rgba: "rgb(231 178 157 / 32%)",
+            bg: "#f7e6df",
+            font: "salmon",
+            btnFont: "tomato",
+            fade: "#eddbd4",
+            main: "salmon",
+            second: "mistyrose",
+          },
+        };
 
   const handleThemeChange = (theme) => {
     setTheme(theme);
@@ -134,7 +133,8 @@ function App() {
   };
 
   return (
-    <Background $theme={theme}>
+    <ThemeProvider theme={themeColor}>
+      <GlobalStyle />
       <Wrapper>
         <ThemeSelector theme={theme} themeChange={handleThemeChange} />
         <TodoListWrapper>
@@ -196,16 +196,8 @@ function App() {
           </FilterButtons>
         </TodoListWrapper>
       </Wrapper>
-    </Background>
+    </ThemeProvider>
   );
 }
 
 export default App;
-
-// 待辦
-// theme 變換
-// 要怎麼樣才能更直接的判斷 theme 然後套進 styled？
-// 如：統一在 styled 一開始就判斷好，然後底下就只需要用到 props.theme.xxx
-// 把常用的元素包成 component:
-// text center, color series, margin, padding
-// 一定要把所有東西都包成 Component 嗎？

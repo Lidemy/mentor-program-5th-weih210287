@@ -35,6 +35,3 @@ export default function ThemeSelector({ theme, themeChange }) {
     </SelectorWrapper>
   );
 }
-
-// 待辦
-// 加入 active 標籤，selector 顯示粗線

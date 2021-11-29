@@ -5,11 +5,7 @@ const Todo = styled.div`
   padding: 5px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid
-    ${(props) =>
-      props.$theme === `darkcyan`
-        ? props.theme.darkcyan.fade
-        : props.theme.salmon.fade};
+  border-bottom: 1px solid ${(props) => props.theme.main.fade};
 
   & + & {
     margin-top: 10px;
@@ -20,11 +16,7 @@ const Todo = styled.div`
       props.$isDone &&
       `
       text-decoration: line-through;
-      color: ${
-        props.$theme === `darkcyan`
-          ? props.theme.darkcyan.fade
-          : props.theme.salmon.fade
-      };
+      color: ${props.theme.main.fade};
     `}
   }
 
@@ -45,10 +37,7 @@ const Todo = styled.div`
 
 const TodoContent = styled.span`
   text-align: left;
-  color: ${(props) =>
-    props.$theme === `darkcyan`
-      ? props.theme.darkcyan.font
-      : props.theme.salmon.font};
+  color: ${(props) => props.theme.main.font};
 `;
 
 export default function TodoItem({
@@ -77,9 +66,6 @@ export default function TodoItem({
         </TodoContent>
       </div>
       <div>
-        <TodoButton $theme={theme} onClick={editTodo}>
-          編輯
-        </TodoButton>
         <TodoButton $theme={theme} onClick={() => deleteTodo(todo.id)}>
           刪除
         </TodoButton>
